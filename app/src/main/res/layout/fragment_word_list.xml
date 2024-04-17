@@ -31,7 +31,7 @@
         app:layout_constraintTop_toBottomOf="@id/top_app_bar"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:padding="8dp">
+        android:padding="14dp">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_words_vertical"

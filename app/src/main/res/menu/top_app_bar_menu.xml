@@ -5,7 +5,7 @@
     <item
         android:id="@+id/list_mode"
         android:title="Grid"
-        android:icon="@drawable/ic_view_module_24"
+        android:icon="@drawable/ic_table_rows_24"
         android:iconTint="@color/black"
         android:contentDescription="Grid"
         app:showAsAction="ifRoom" />

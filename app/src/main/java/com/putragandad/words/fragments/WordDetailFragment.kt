@@ -6,8 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.MaterialToolbar
 import com.putragandad.words.R
+import com.putragandad.words.adapters.WordDetailAdapter
+import com.putragandad.words.data.WordsConstantData
 
 
 class WordDetailFragment : Fragment() {
@@ -32,5 +36,11 @@ class WordDetailFragment : Fragment() {
         topAppBar.setNavigationOnClickListener {
             Navigation.findNavController(view).navigate(R.id.action_wordDetailFragment_to_wordListFragment)
         }
+
+        val alphabetDetailArray = WordsConstantData.getWordsDetail(words) // get words detail data from WordsConstantData
+        val rvAdapter = WordDetailAdapter(alphabetDetailArray)
+        val recyclerView: RecyclerView = view.findViewById(R.id.rv_detail_words)
+        recyclerView.adapter = rvAdapter
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
     }
 }

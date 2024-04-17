@@ -31,7 +31,7 @@ class WordListFragment : Fragment(), WordListClickListener {
         super.onViewCreated(view, savedInstanceState)
 
         // generate alphabet a to z and convert it to array
-        val alphabetArray = ('A'..'Z').map { it.toString() }.toTypedArray()
+        val alphabetArray = ('A'..'Z').map { it.toString() }.toMutableList()
 
         val rvAdapter = WordListAdapter(alphabetArray, this)
 

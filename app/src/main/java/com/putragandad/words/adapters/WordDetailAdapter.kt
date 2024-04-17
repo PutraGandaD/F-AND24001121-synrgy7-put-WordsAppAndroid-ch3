@@ -7,7 +7,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.putragandad.words.R
 
-class WordDetailAdapter(private val dataSet: Array<String>) : RecyclerView.Adapter<WordDetailAdapter.ViewHolder>() {
+class WordDetailAdapter(private val dataSet: MutableList<String>) : RecyclerView.Adapter<WordDetailAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val words = view.findViewById<TextView>(R.id.tv_card_word_detail)
     }

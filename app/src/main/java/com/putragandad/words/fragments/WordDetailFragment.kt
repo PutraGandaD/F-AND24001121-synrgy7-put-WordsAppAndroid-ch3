@@ -37,7 +37,7 @@ class WordDetailFragment : Fragment() {
             Navigation.findNavController(view).navigate(R.id.action_wordDetailFragment_to_wordListFragment)
         }
 
-        val alphabetDetailArray = WordsConstantData.getWordsDetail(words) // get words detail data from WordsConstantData
+        val alphabetDetailArray = WordsConstantData.getWordsDetail(words) // get words detail data based on words from bundle
         val rvAdapter = WordDetailAdapter(alphabetDetailArray)
         val recyclerView: RecyclerView = view.findViewById(R.id.rv_detail_words)
         recyclerView.adapter = rvAdapter

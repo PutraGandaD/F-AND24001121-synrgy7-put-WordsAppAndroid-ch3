@@ -1,5 +1,7 @@
 package com.putragandad.words.adapters
 
+import android.content.Intent
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -23,6 +25,15 @@ class WordDetailAdapter(private val dataSet: MutableList<String>) : RecyclerView
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.words.text = dataSet[position]
+        val current = dataSet.get(position) // get data
+        val context = holder.itemView.context // get context
+        holder.words.text = current
+
+        holder.itemView.setOnClickListener {
+            val url = "https://www.google.com/search?q=$current"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            context.startActivity(intent)
+        }
     }
 }

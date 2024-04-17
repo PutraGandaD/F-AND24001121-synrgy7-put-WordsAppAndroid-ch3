@@ -2,7 +2,8 @@
 Utilizing :
 - [x] Material Design 3 By Google (https://m3.material.io)
 - [x] RecyclerView in a Fragment with OnItemClickListener Interface
-- [x] Bundle for passing data between fragments 
+- [x] Bundle for passing data between fragments
+- [x] Switching between Vertical List to Grid Layout and vice versa 
 - [x] Navigation Component for navigating between fragments, using only Single Activity
 - [x] NestedScrollView usage
 - [x] Implicit Intent with Uri for accessing browser

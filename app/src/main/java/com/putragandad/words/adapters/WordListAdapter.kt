@@ -14,7 +14,7 @@ class WordListAdapter(private val dataSet: Array<String>) : RecyclerView.Adapter
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.words_item_rv, parent, false)
+            .inflate(R.layout.words_list_item_rv, parent, false)
         return ViewHolder(view)
     }
 

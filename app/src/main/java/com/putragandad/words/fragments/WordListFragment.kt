@@ -35,7 +35,7 @@ class WordListFragment : Fragment() {
         recyclerView.adapter = rvAdapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        val topappbar : MaterialToolbar = view.findViewById(R.id.topAppBar)
+        val topappbar : MaterialToolbar = view.findViewById(R.id.topAppBarList)
 
         // menu item click listener for topappbar
         topappbar.setOnMenuItemClickListener { menuItem ->

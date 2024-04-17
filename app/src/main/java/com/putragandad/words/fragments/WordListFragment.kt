@@ -5,14 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
+import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.appbar.MaterialToolbar
 import com.putragandad.words.R
 import com.putragandad.words.adapters.WordListAdapter
+import com.putragandad.words.adapters.WordListClickListener
 
-class WordListFragment : Fragment() {
+class WordListFragment : Fragment(), WordListClickListener {
     private var layoutmode = "vertical" // helper variable for detecting layout mode
 
     override fun onCreateView(
@@ -29,7 +33,7 @@ class WordListFragment : Fragment() {
         // generate alphabet a to z and convert it to array
         val alphabetArray = ('A'..'Z').map { it.toString() }.toTypedArray()
 
-        val rvAdapter = WordListAdapter(alphabetArray)
+        val rvAdapter = WordListAdapter(alphabetArray, this)
 
         val recyclerView: RecyclerView = view.findViewById(R.id.rv_words_vertical)
         recyclerView.adapter = rvAdapter
@@ -60,5 +64,14 @@ class WordListFragment : Fragment() {
                 else -> false
             }
         }
+    }
+
+    override fun onItemClicked(word: String) {
+        val bundle = bundleOf(EXTRA_DATA to word) // use bundle to pass word to WordDetailFragment
+        view?.let { Navigation.findNavController(it).navigate(R.id.action_wordListFragment_to_wordDetailFragment, bundle) }
+    }
+
+    companion object {
+        val EXTRA_DATA = "EXTRA_DATA"
     }
 }

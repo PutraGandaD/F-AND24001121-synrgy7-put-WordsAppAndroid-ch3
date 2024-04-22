@@ -1,4 +1,7 @@
 # Words App
+
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/10b6cdad45ed4da5a6cf9b4ab5f4f163)](https://app.codacy.com/gh/PutraGandaD/F-AND24001121-synrgy7-put-WordsAppAndroid-ch3?utm_source=github.com&utm_medium=referral&utm_content=PutraGandaD/F-AND24001121-synrgy7-put-WordsAppAndroid-ch3&utm_campaign=Badge_Grade)
+
 Utilizing :
 - [x] Material Design 3 By Google (https://m3.material.io)
 - [x] RecyclerView in a Fragment with OnItemClickListener Interface

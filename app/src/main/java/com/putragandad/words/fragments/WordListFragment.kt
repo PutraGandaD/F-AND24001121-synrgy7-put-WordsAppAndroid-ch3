@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -15,6 +14,7 @@ import com.google.android.material.appbar.MaterialToolbar
 import com.putragandad.words.R
 import com.putragandad.words.adapters.WordListAdapter
 import com.putragandad.words.adapters.WordListClickListener
+import com.putragandad.words.repositories.WordsRepository
 
 class WordListFragment : Fragment(), WordListClickListener {
     private var layoutmode = "vertical" // helper variable for detecting layout mode
@@ -30,10 +30,7 @@ class WordListFragment : Fragment(), WordListClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // generate alphabet a to z and convert it to array
-        val alphabetArray = ('A'..'Z').map { it.toString() }.toMutableList()
-
-        val rvAdapter = WordListAdapter(alphabetArray, this)
+        val rvAdapter = WordListAdapter(WordsRepository.getWordsList(), this)
 
         val recyclerView: RecyclerView = view.findViewById(R.id.rv_words_vertical)
         recyclerView.adapter = rvAdapter

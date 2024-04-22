@@ -9,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.putragandad.words.R
 
-class WordDetailAdapter(private val dataSet: MutableList<String>) : RecyclerView.Adapter<WordDetailAdapter.ViewHolder>() {
+class WordDetailAdapter(private val dataSet: List<String>, private val onItemClickListener: WordDetailClickListener) : RecyclerView.Adapter<WordDetailAdapter.ViewHolder>() {
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         val words = view.findViewById<TextView>(R.id.tv_card_word_detail)
     }
@@ -26,14 +26,14 @@ class WordDetailAdapter(private val dataSet: MutableList<String>) : RecyclerView
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val current = dataSet.get(position) // get data
-        val context = holder.itemView.context // get context
         holder.words.text = current
 
         holder.itemView.setOnClickListener {
-            val url = "https://www.google.com/search?q=$current"
-            val intent = Intent(Intent.ACTION_VIEW)
-            intent.data = Uri.parse(url)
-            context.startActivity(intent)
+            onItemClickListener.onItemClicked(current)
         }
     }
+}
+
+interface WordDetailClickListener {
+    fun onItemClicked(word: String)
 }

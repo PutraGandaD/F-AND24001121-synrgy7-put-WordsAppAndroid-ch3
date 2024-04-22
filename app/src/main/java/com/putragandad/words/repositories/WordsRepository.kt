@@ -3,7 +3,7 @@ package com.putragandad.words.repositories
 import com.putragandad.words.data.WordsConstantData
 
 object WordsRepository {
-    fun getWordsList() : MutableList<String> {
+    fun getWordsList() : List<String> {
         return WordsConstantData.alphabetArray
     }
 

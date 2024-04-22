@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.card.MaterialCardView
 import com.putragandad.words.R
 
 class WordDetailAdapter(private val dataSet: List<String>, private val onItemClickListener: WordDetailClickListener) : RecyclerView.Adapter<WordDetailAdapter.ViewHolder>() {
@@ -28,7 +29,9 @@ class WordDetailAdapter(private val dataSet: List<String>, private val onItemCli
         val current = dataSet.get(position) // get data
         holder.words.text = current
 
-        holder.itemView.setOnClickListener {
+        val wordsCard = holder.itemView.findViewById<MaterialCardView>(R.id.card_word_detail)
+
+        wordsCard.setOnClickListener {
             onItemClickListener.onItemClicked(current)
         }
     }

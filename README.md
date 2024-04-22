@@ -6,7 +6,8 @@ Utilizing :
 - [x] Switching between Vertical List to Grid Layout and vice versa 
 - [x] Navigation Component for navigating between fragments, using only Single Activity
 - [x] NestedScrollView usage
-- [x] Implicit Intent with Uri for accessing browser
+- [x] Explicit Intent with Uri for accessing browser
+- [ ] SharedPreferences for saving layout switching state (next up)
 
 ## Screenshot
 ![Untitled design(5)](https://github.com/PutraGandaD/F-AND24001121-synrgy7-put-WordsAppAndroid-ch3/assets/54593964/e5d09af6-5bd4-4f78-b715-d740f82d1ff4)

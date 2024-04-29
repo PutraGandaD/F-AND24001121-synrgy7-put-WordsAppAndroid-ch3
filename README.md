@@ -7,7 +7,7 @@ Utilizing :
 - [x] Navigation Component for navigating between fragments, using only Single Activity
 - [x] NestedScrollView usage
 - [x] Explicit Intent with Uri for accessing browser
-- [ ] SharedPreferences for saving layout switching state (next up)
+- [x] SharedPreferences for saving layout mode state 
 
 ## Screenshot
 ![Untitled design(5)](https://github.com/PutraGandaD/F-AND24001121-synrgy7-put-WordsAppAndroid-ch3/assets/54593964/e5d09af6-5bd4-4f78-b715-d740f82d1ff4)
